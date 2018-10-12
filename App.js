@@ -30,15 +30,7 @@ export default class App extends Component {
         </Header>
         <Content>
         <Card>
-            <CardItem>
-              <Left>
-                <Thumbnail source={{uri: 'https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_960_720.jpg'}} />
-                <Body>
-                  <Text>NativeBase</Text>
-                  <Text note>GeekyAnts</Text>
-                </Body>
-              </Left>
-            </CardItem>
+            
             <CardItem cardBody>
               <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_960_720.jpg'}} style={{height: 200, width: null, flex: 1}}/>
             </CardItem>
