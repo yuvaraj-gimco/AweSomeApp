@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component,AppRegistry} from 'react';
 
 class DetailsScreen extends React.Component {
     render() {
@@ -60,3 +60,4 @@ class DetailsScreen extends React.Component {
     }
   }
   
+  AppRegistry.registerComponent(DetailsScreen, () => DetailsScreen);

@@ -1,30 +1,26 @@
 import React from 'react';
-import { Button, View, Text,Image } from 'react-native';
+import { Button, Text,Image,TouchableOpacity,ScrollView } from 'react-native';
 import { createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
-import { Card, Container, CardItem ,Title,Left,Body,Right, Content,Header} from 'native-base';
+import { Card, Container, CardItem ,Title,Left,Body,Right, Content,Header,Footer,FooterTab} from 'native-base';
 
 //import screens
-//  import DetailsScreen from './DetailsScreen';
+  //import DetailsScreen from './DetailsScreen';
 
 class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
-      <Header>
-      <Left>
-     </Left>
-        <Body>
-        <Title>Nicoloi </Title>
-        </Body>
-    <Right />
+      <Header><Left></Left>
+        <Body><Title>Nicolai </Title></Body><Right></Right>
    </Header>
    <Content>
     <Card>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
       </CardItem>
+      <TouchableOpacity  onPress={() => this.props.navigation.navigate('Details')}>
       <CardItem bordered style={ {flex: 1, justifyContent: 'center', alignItems: 'center'} }>
      <Image  onPress={() => this.props.navigation.navigate('Details')}  source={{uri: 'https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_960_720.jpg'}} style={{height: 200, width: 200, flex: 1}}/> 
-      </CardItem>
+    </CardItem></TouchableOpacity>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
         <Button
           title="Cut And Drill"
@@ -74,6 +70,12 @@ class HomeScreen extends React.Component {
       </CardItem>
       </Card>
       </Content>
+      <Footer>
+         <FooterTab>
+           <Body>
+              <Text full>@2018 Ailerin</Text></Body>
+        </FooterTab>
+        </Footer>
       </Container>
     );
   }
@@ -82,13 +84,16 @@ class HomeScreen extends React.Component {
 class DetailsScreen extends React.Component {
   render() {
     return (
+    
       <Container>
+          <ScrollView>
       <Card>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
       </CardItem>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('Images')}>
       <CardItem>
       <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_960_720.jpg'}} style={{height: 200, width: 200, flex: 1}}/>
-      </CardItem>
+      </CardItem></TouchableOpacity>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
         <Button
           title="Finger Bits"
@@ -134,7 +139,7 @@ class DetailsScreen extends React.Component {
           onPress={() => this.props.navigation.navigate('Images')}
         />
       </CardItem>
-      </Card></Container>
+      </Card></ScrollView></Container>
     );
   }
 }
@@ -143,12 +148,14 @@ class ImageDetails extends React.Component {
   render() {
     return (
       <Container>
+        <ScrollView>
       <Card>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
       </CardItem>
+      <TouchableOpacity  onPress={() => this.props.navigation.navigate('Data')}>
       <CardItem>
       <Image source={{uri: 'https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_960_720.jpg'}} style={{height: 200, width: 200, flex: 1}}/>
-      </CardItem>
+      </CardItem></TouchableOpacity>
       <CardItem bordered style={{justifyContent: 'center', alignItems: 'center'}}>
         <Button
           title="WHITE TWIN FINGER BIT"
@@ -207,7 +214,7 @@ class ImageDetails extends React.Component {
           onPress={() => this.props.navigation.navigate('Data')}
         />
       </CardItem>
-      </Card></Container>
+      </Card></ScrollView></Container>
     );
   }
 }
